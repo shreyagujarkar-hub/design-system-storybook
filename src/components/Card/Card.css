@@ -1,0 +1,99 @@
+/* =================================================================
+   Card — UEDP Design System
+   Uses: slate, gray, white | border-radius | padding | max-w
+   ================================================================= */
+
+.uedp-card {
+  background-color: var(--uedp-base-white);
+  border-radius: var(--uedp-rounded-xl);
+  overflow: hidden;
+  max-width: var(--uedp-max-w-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.uedp-card--elevated {
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--uedp-slate-100);
+}
+
+.uedp-card--elevated:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+.uedp-card--outlined {
+  border: 1px solid var(--uedp-slate-200);
+  box-shadow: none;
+}
+
+.uedp-card--flat {
+  background-color: var(--uedp-slate-50);
+  border: none;
+  box-shadow: none;
+}
+
+/* ── Padding variations ─────────────────── */
+.uedp-card--p-sm .uedp-card__header,
+.uedp-card--p-sm .uedp-card__body,
+.uedp-card--p-sm .uedp-card__footer {
+  padding: var(--uedp-p-3);
+}
+
+.uedp-card--p-md .uedp-card__header,
+.uedp-card--p-md .uedp-card__body,
+.uedp-card--p-md .uedp-card__footer {
+  padding: var(--uedp-p-5);
+}
+
+.uedp-card--p-lg .uedp-card__header,
+.uedp-card--p-lg .uedp-card__body,
+.uedp-card--p-lg .uedp-card__footer {
+  padding: var(--uedp-p-8);
+}
+
+.uedp-card__header {
+  padding-bottom: 0 !important;
+}
+
+.uedp-card__image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: var(--uedp-slate-100);
+}
+
+.uedp-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uedp-card__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--uedp-slate-900);
+  margin-bottom: var(--uedp-gap-1);
+}
+
+.uedp-card__subtitle {
+  font-size: 0.875rem;
+  color: var(--uedp-slate-500);
+}
+
+.uedp-card__body {
+  color: var(--uedp-slate-600);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.uedp-card__footer {
+  border-top: 1px solid var(--uedp-slate-100);
+  background-color: var(--uedp-slate-50);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--uedp-gap-2);
+}

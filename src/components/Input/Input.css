@@ -1,0 +1,97 @@
+/* =================================================================
+   Input — UEDP Design System
+   Uses: slate, indigo, red | rounded-lg | padding | gap
+   ================================================================= */
+
+.uedp-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uedp-gap-1);
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  max-width: var(--uedp-max-w-sm);
+}
+
+.uedp-input__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--uedp-slate-700);
+}
+
+.uedp-input__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.uedp-input {
+  width: 100%;
+  padding: var(--uedp-p-2-5) var(--uedp-p-3-5);
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--uedp-slate-900);
+  background-color: var(--uedp-base-white);
+  border: 1px solid var(--uedp-slate-300);
+  border-radius: var(--uedp-rounded-lg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.uedp-input::placeholder {
+  color: var(--uedp-slate-400);
+}
+
+.uedp-input:focus {
+  border-color: var(--uedp-indigo-500);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.uedp-input--has-left-icon {
+  padding-left: var(--uedp-p-10);
+}
+
+.uedp-input--has-right-icon {
+  padding-right: var(--uedp-p-10);
+}
+
+.uedp-input__icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--uedp-slate-400);
+  pointer-events: none;
+}
+
+.uedp-input__icon--left {
+  left: var(--uedp-p-3);
+}
+
+.uedp-input__icon--right {
+  right: var(--uedp-p-3);
+}
+
+/* Error state */
+.uedp-input-group--error .uedp-input {
+  border-color: var(--uedp-red-500);
+}
+
+.uedp-input-group--error .uedp-input:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.uedp-input__helper {
+  font-size: 0.75rem;
+  color: var(--uedp-slate-500);
+}
+
+.uedp-input__helper--error {
+  color: var(--uedp-red-600);
+}
+
+/* Disabled state */
+.uedp-input-group--disabled .uedp-input {
+  background-color: var(--uedp-slate-100);
+  color: var(--uedp-slate-500);
+  cursor: not-allowed;
+}

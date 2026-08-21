@@ -1,0 +1,192 @@
+/* =================================================================
+   Button — UEDP Design System
+   Uses: indigo, slate, red, white | border-radius | padding | gap | opacity
+   ================================================================= */
+
+.uedp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--uedp-gap-2);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.uedp-button:disabled {
+  cursor: not-allowed;
+  opacity: calc(var(--uedp-opacity-50) / 100);
+}
+
+/* ── Sizes ───────────────────────────────── */
+
+.uedp-button--sm {
+  padding: var(--uedp-p-1) var(--uedp-p-3);
+  font-size: 0.8125rem;
+  border-radius: var(--uedp-rounded-md);
+  line-height: 1.25rem;
+}
+
+.uedp-button--md {
+  padding: var(--uedp-p-2) var(--uedp-p-4);
+  font-size: 0.875rem;
+  border-radius: var(--uedp-rounded-lg);
+  line-height: 1.25rem;
+}
+
+.uedp-button--lg {
+  padding: var(--uedp-p-3) var(--uedp-p-6);
+  font-size: 1rem;
+  border-radius: var(--uedp-rounded-lg);
+  line-height: 1.5rem;
+}
+
+/* ── Variants ────────────────────────────── */
+
+.uedp-button--primary {
+  background: var(--uedp-indigo-600);
+  color: var(--uedp-base-white);
+  border-color: var(--uedp-indigo-600);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.uedp-button--primary:hover:not(:disabled) {
+  background: var(--uedp-indigo-700);
+  border-color: var(--uedp-indigo-700);
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.25);
+  transform: translateY(-1px);
+}
+
+.uedp-button--primary:active:not(:disabled) {
+  background: var(--uedp-indigo-800);
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.uedp-button--secondary {
+  background: var(--uedp-slate-100);
+  color: var(--uedp-slate-800);
+  border-color: var(--uedp-slate-200);
+}
+
+.uedp-button--secondary:hover:not(:disabled) {
+  background: var(--uedp-slate-200);
+  border-color: var(--uedp-slate-300);
+  transform: translateY(-1px);
+}
+
+.uedp-button--secondary:active:not(:disabled) {
+  background: var(--uedp-slate-300);
+  transform: translateY(0);
+}
+
+.uedp-button--outline {
+  background: transparent;
+  color: var(--uedp-indigo-600);
+  border-color: var(--uedp-indigo-300);
+}
+
+.uedp-button--outline:hover:not(:disabled) {
+  background: var(--uedp-indigo-50);
+  border-color: var(--uedp-indigo-400);
+  transform: translateY(-1px);
+}
+
+.uedp-button--outline:active:not(:disabled) {
+  background: var(--uedp-indigo-100);
+  transform: translateY(0);
+}
+
+.uedp-button--ghost {
+  background: transparent;
+  color: var(--uedp-slate-700);
+  border-color: transparent;
+}
+
+.uedp-button--ghost:hover:not(:disabled) {
+  background: var(--uedp-slate-100);
+  color: var(--uedp-slate-900);
+}
+
+.uedp-button--ghost:active:not(:disabled) {
+  background: var(--uedp-slate-200);
+}
+
+.uedp-button--danger {
+  background: var(--uedp-red-600);
+  color: var(--uedp-base-white);
+  border-color: var(--uedp-red-600);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.uedp-button--danger:hover:not(:disabled) {
+  background: var(--uedp-red-700);
+  border-color: var(--uedp-red-700);
+  box-shadow: 0 4px 6px rgba(220, 38, 38, 0.25);
+  transform: translateY(-1px);
+}
+
+.uedp-button--danger:active:not(:disabled) {
+  background: var(--uedp-red-800);
+  transform: translateY(0);
+}
+
+/* ── Full Width ──────────────────────────── */
+
+.uedp-button--full {
+  width: 100%;
+}
+
+/* ── Loading Spinner ─────────────────────── */
+
+.uedp-button--loading {
+  pointer-events: none;
+}
+
+.uedp-button__spinner {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  animation: uedp-spin 0.8s linear infinite;
+}
+
+.uedp-button__spinner svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes uedp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Icon ────────────────────────────────── */
+
+.uedp-button__icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.125em;
+}
+
+/* ── Ripple effect ───────────────────────── */
+
+.uedp-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10%);
+  transform: scale(10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.3s;
+}
+
+.uedp-button:active::after {
+  transform: scale(0);
+  opacity: 1;
+  transition: 0s;
+}

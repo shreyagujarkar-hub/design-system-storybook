@@ -1,0 +1,85 @@
+/* =================================================================
+   Avatar — UEDP Design System
+   Uses: indigo, slate, emerald, amber, rose | rounded-full
+   ================================================================= */
+
+.uedp-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--uedp-rounded-full);
+  background-color: var(--uedp-indigo-100);
+  color: var(--uedp-indigo-700);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  user-select: none;
+  overflow: visible;
+  border: 2px solid var(--uedp-base-white);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.uedp-avatar__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--uedp-rounded-full);
+}
+
+.uedp-avatar__fallback {
+  line-height: 1;
+}
+
+/* ── Sizes ───────────────────────────────── */
+.uedp-avatar--sm {
+  width: 32px;
+  height: 32px;
+  font-size: 0.75rem;
+}
+
+.uedp-avatar--md {
+  width: 40px;
+  height: 40px;
+  font-size: 0.875rem;
+}
+
+.uedp-avatar--lg {
+  width: 56px;
+  height: 56px;
+  font-size: 1.125rem;
+}
+
+.uedp-avatar--xl {
+  width: 72px;
+  height: 72px;
+  font-size: 1.5rem;
+}
+
+/* ── Status indicator ────────────────────── */
+.uedp-avatar__status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height: 25%;
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: var(--uedp-rounded-full);
+  border: 2px solid var(--uedp-base-white);
+}
+
+.uedp-avatar__status--online {
+  background-color: var(--uedp-emerald-500);
+}
+
+.uedp-avatar__status--busy {
+  background-color: var(--uedp-rose-500);
+}
+
+.uedp-avatar__status--away {
+  background-color: var(--uedp-amber-500);
+}
+
+.uedp-avatar__status--offline {
+  background-color: var(--uedp-slate-400);
+}

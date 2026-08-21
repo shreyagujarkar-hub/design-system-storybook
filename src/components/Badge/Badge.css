@@ -1,0 +1,74 @@
+/* =================================================================
+   Badge — UEDP Design System
+   Uses: indigo, emerald, amber, rose, slate, sky | rounded-full | padding | gap
+   ================================================================= */
+
+.uedp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--uedp-gap-1);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border-radius: var(--uedp-rounded-full);
+  white-space: nowrap;
+}
+
+.uedp-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--uedp-rounded-full);
+  background-color: currentColor;
+}
+
+/* ── Sizes ───────────────────────────────── */
+.uedp-badge--sm {
+  padding: 2px var(--uedp-p-2);
+  font-size: 0.75rem;
+}
+
+.uedp-badge--md {
+  padding: var(--uedp-p-1) var(--uedp-p-2-5);
+  font-size: 0.8125rem;
+}
+
+.uedp-badge--lg {
+  padding: var(--uedp-p-1-5) var(--uedp-p-3);
+  font-size: 0.875rem;
+}
+
+/* ── Variants ────────────────────────────── */
+.uedp-badge--indigo {
+  background-color: var(--uedp-indigo-50);
+  color: var(--uedp-indigo-700);
+  border: 1px solid var(--uedp-indigo-200);
+}
+
+.uedp-badge--emerald {
+  background-color: var(--uedp-emerald-50);
+  color: var(--uedp-emerald-700);
+  border: 1px solid var(--uedp-emerald-200);
+}
+
+.uedp-badge--amber {
+  background-color: var(--uedp-amber-50);
+  color: var(--uedp-amber-700);
+  border: 1px solid var(--uedp-amber-200);
+}
+
+.uedp-badge--rose {
+  background-color: var(--uedp-rose-50);
+  color: var(--uedp-rose-700);
+  border: 1px solid var(--uedp-rose-200);
+}
+
+.uedp-badge--slate {
+  background-color: var(--uedp-slate-100);
+  color: var(--uedp-slate-700);
+  border: 1px solid var(--uedp-slate-200);
+}
+
+.uedp-badge--sky {
+  background-color: var(--uedp-sky-50);
+  color: var(--uedp-sky-700);
+  border: 1px solid var(--uedp-sky-200);
+}
