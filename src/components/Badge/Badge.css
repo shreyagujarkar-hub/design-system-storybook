@@ -1,74 +1,135 @@
 /* =================================================================
    Badge — UEDP Design System
-   Uses: indigo, emerald, amber, rose, slate, sky | rounded-full | padding | gap
+   Matches Figma reference: Pill badge with "more info" label & orange info icon
    ================================================================= */
 
 .uedp-badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--uedp-gap-1);
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  border-radius: var(--uedp-rounded-full);
+  justify-content: center;
+  gap: var(--uedp-gap-2, 8px);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-radius: var(--uedp-rounded-full, 9999px);
   white-space: nowrap;
+  box-sizing: border-box;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .uedp-badge__dot {
   width: 6px;
   height: 6px;
-  border-radius: var(--uedp-rounded-full);
+  border-radius: var(--uedp-rounded-full, 9999px);
   background-color: currentColor;
 }
 
-/* ── Sizes ───────────────────────────────── */
+.uedp-badge__info-icon {
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ── Default Sizes (for status tags) ────── */
 .uedp-badge--sm {
-  padding: 2px var(--uedp-p-2);
+  padding: 2px var(--uedp-p-2, 8px);
   font-size: 0.75rem;
 }
 
 .uedp-badge--md {
-  padding: var(--uedp-p-1) var(--uedp-p-2-5);
+  padding: var(--uedp-p-1, 4px) var(--uedp-p-2-5, 10px);
   font-size: 0.8125rem;
 }
 
 .uedp-badge--lg {
-  padding: var(--uedp-p-1-5) var(--uedp-p-3);
+  padding: var(--uedp-p-1-5, 6px) var(--uedp-p-3, 12px);
   font-size: 0.875rem;
 }
 
-/* ── Variants ────────────────────────────── */
+/* ── Default / Primary "more info" Pill Style (Matching Figma Reference) ── */
+.uedp-badge--default,
+.uedp-badge--primary {
+  background: var(--uedp-base-white, #FFFFFF);
+  color: #2D1E12;
+  border: 2px solid #E2E8F0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.uedp-badge--default.uedp-badge--sm,
+.uedp-badge--primary.uedp-badge--sm {
+  padding: 4px 8px 4px 14px;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  gap: 8px;
+}
+
+.uedp-badge--default.uedp-badge--sm .uedp-badge__info-icon,
+.uedp-badge--primary.uedp-badge--sm .uedp-badge__info-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.uedp-badge--default.uedp-badge--md,
+.uedp-badge--primary.uedp-badge--md {
+  padding: 8px 12px 8px 20px;
+  font-size: 1.0625rem;
+  line-height: 1.35rem;
+  gap: 12px;
+}
+
+.uedp-badge--default.uedp-badge--md .uedp-badge__info-icon,
+.uedp-badge--primary.uedp-badge--md .uedp-badge__info-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.uedp-badge--default.uedp-badge--lg,
+.uedp-badge--primary.uedp-badge--lg {
+  padding: 12px 16px 12px 26px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  gap: 16px;
+}
+
+.uedp-badge--default.uedp-badge--lg .uedp-badge__info-icon,
+.uedp-badge--primary.uedp-badge--lg .uedp-badge__info-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* ── Color Status Tag Variants ───────────── */
 .uedp-badge--indigo {
-  background-color: var(--uedp-indigo-50);
-  color: var(--uedp-indigo-700);
-  border: 1px solid var(--uedp-indigo-200);
+  background-color: var(--uedp-indigo-50, #EEF2FF);
+  color: var(--uedp-indigo-700, #4338CA);
+  border: 1px solid var(--uedp-indigo-200, #C7D2FE);
 }
 
 .uedp-badge--emerald {
-  background-color: var(--uedp-emerald-50);
-  color: var(--uedp-emerald-700);
-  border: 1px solid var(--uedp-emerald-200);
+  background-color: var(--uedp-emerald-50, #ECFDF5);
+  color: var(--uedp-emerald-700, #047857);
+  border: 1px solid var(--uedp-emerald-200, #A7F3D0);
 }
 
 .uedp-badge--amber {
-  background-color: var(--uedp-amber-50);
-  color: var(--uedp-amber-700);
-  border: 1px solid var(--uedp-amber-200);
+  background-color: var(--uedp-amber-50, #FFFBEB);
+  color: var(--uedp-amber-700, #B45309);
+  border: 1px solid var(--uedp-amber-200, #FDE68A);
 }
 
 .uedp-badge--rose {
-  background-color: var(--uedp-rose-50);
-  color: var(--uedp-rose-700);
-  border: 1px solid var(--uedp-rose-200);
+  background-color: var(--uedp-rose-50, #FFF1F2);
+  color: var(--uedp-rose-700, #BE123C);
+  border: 1px solid var(--uedp-rose-200, #FECDD3);
 }
 
 .uedp-badge--slate {
-  background-color: var(--uedp-slate-100);
-  color: var(--uedp-slate-700);
-  border: 1px solid var(--uedp-slate-200);
+  background-color: var(--uedp-slate-100, #F1F5F9);
+  color: var(--uedp-slate-700, #334155);
+  border: 1px solid var(--uedp-slate-200, #E2E8F0);
 }
 
 .uedp-badge--sky {
-  background-color: var(--uedp-sky-50);
-  color: var(--uedp-sky-700);
-  border: 1px solid var(--uedp-sky-200);
+  background-color: var(--uedp-sky-50, #F0F9FF);
+  color: var(--uedp-sky-700, #0369A1);
+  border: 1px solid var(--uedp-sky-200, #BAE6FD);
 }
