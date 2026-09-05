@@ -90,21 +90,40 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
+/* Secondary: Figma Components 1-4 Pill Button with Cyan Accents */
 .uedp-button--secondary {
-  background: var(--uedp-slate-100);
-  color: var(--uedp-slate-800);
-  border-color: var(--uedp-slate-200);
+  background: var(--uedp-base-white, #FFFFFF);
+  color: #008CA3;
+  border-color: transparent;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
-.uedp-button--secondary:hover:not(:disabled) {
-  background: var(--uedp-slate-200);
-  border-color: var(--uedp-slate-300);
+.uedp-button--secondary:hover:not(:disabled),
+.uedp-button--secondary.uedp-button--hover-preview {
+  background: #A4F4F9;
+  color: #008CA3;
+  border-color: transparent;
+  box-shadow: 0 4px 8px -1px rgba(6, 182, 212, 0.15);
   transform: translateY(-1px);
 }
 
-.uedp-button--secondary:active:not(:disabled) {
-  background: var(--uedp-slate-300);
+.uedp-button--secondary:active:not(:disabled),
+.uedp-button--secondary.uedp-button--pressed-preview {
+  background: #00A2C7;
+  color: #FFFFFF;
+  border-color: transparent;
   transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.uedp-button--secondary:disabled,
+.uedp-button--secondary.uedp-button--disabled-preview {
+  background: #92979E;
+  color: #FFFFFF;
+  border-color: transparent;
+  opacity: 0.95;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 .uedp-button--outline {

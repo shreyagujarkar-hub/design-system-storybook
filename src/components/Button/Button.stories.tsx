@@ -126,7 +126,8 @@ export const Giant: Story = {
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    children: 'Secondary Button',
+    children: 'latest',
+    size: 'md',
     showInfoIcon: false,
   },
 };
@@ -192,12 +193,112 @@ export const AllVariants: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
       <Button variant="primary">more info</Button>
-      <Button variant="secondary" showInfoIcon={false}>Secondary</Button>
-      <Button variant="outline" showInfoIcon={false}>Outline</Button>
-      <Button variant="ghost" showInfoIcon={false}>Ghost</Button>
-      <Button variant="danger" showInfoIcon={false}>Danger</Button>
+      <Button variant="secondary">latest</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="danger">Danger</Button>
     </div>
   ),
+};
+
+export const SecondaryMatrix: Story = {
+  render: () => {
+    const states = [
+      { name: 'Default', tag: '❖ Component 1', className: '' },
+      { name: 'Hover', tag: '❖ Component 2', className: 'uedp-button--hover-preview' },
+      { name: 'Press', tag: '❖ Component 3', className: 'uedp-button--pressed-preview' },
+      { name: 'Disable', tag: '❖ Component 4', className: 'uedp-button--disabled-preview', disabled: true },
+    ];
+
+    return (
+      <div
+        style={{
+          background: '#97a9ba',
+          padding: '40px 32px',
+          borderRadius: '16px',
+          fontFamily: "'Inter', sans-serif",
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '24px',
+          maxWidth: '900px',
+        }}
+      >
+        {/* Column Headers */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '120px 1fr 1fr 1fr 1.3fr',
+            gap: '16px',
+            textAlign: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <div></div>
+          <div style={{ fontSize: '20px', fontWeight: 500, color: '#000000' }}>Tiny</div>
+          <div style={{ fontSize: '20px', fontWeight: 500, color: '#000000' }}>Medium</div>
+          <div style={{ fontSize: '20px', fontWeight: 500, color: '#000000' }}>Large</div>
+          <div style={{ fontSize: '20px', fontWeight: 500, color: '#000000' }}>Giant</div>
+        </div>
+
+        {/* Rows */}
+        <div
+          style={{
+            border: '2px dashed #7c3aed',
+            borderRadius: '16px',
+            padding: '24px 16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '32px',
+          }}
+        >
+          {states.map((state) => (
+            <div
+              key={state.name}
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '120px 1fr 1fr 1fr 1.3fr',
+                gap: '16px',
+                alignItems: 'center',
+                position: 'relative',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: '22px',
+                  fontWeight: 500,
+                  color: '#000000',
+                  textAlign: 'left',
+                  paddingLeft: '8px',
+                }}
+              >
+                {state.name}
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button variant="secondary" size="tiny" className={state.className} disabled={state.disabled}>
+                  latest
+                </Button>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button variant="secondary" size="medium" className={state.className} disabled={state.disabled}>
+                  latest
+                </Button>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button variant="secondary" size="large" className={state.className} disabled={state.disabled}>
+                  latest
+                </Button>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button variant="secondary" size="giant" className={state.className} disabled={state.disabled}>
+                  latest
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  },
 };
 
 export const AllSizes: Story = {
