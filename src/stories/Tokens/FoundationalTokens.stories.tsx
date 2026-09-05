@@ -51,10 +51,10 @@ export const BorderRadii: StoryObj = {
               style={{
                 width: '100px',
                 height: '100px',
-                backgroundColor: 'var(--uedp-indigo-500)',
+                backgroundColor: '#FB923C',
                 margin: '0 auto 8px',
                 borderRadius: `var(--uedp-${r.name})`,
-                boxShadow: '0 4px 12px rgba(99, 102, 241, 0.25)',
+                boxShadow: '0 4px 12px rgba(251, 146, 60, 0.25)',
               }}
             />
             <div style={{ fontWeight: 600, fontSize: '13px' }}>{r.name}</div>
@@ -80,7 +80,7 @@ export const SpacingScale: StoryObj = {
             <div
               style={{
                 height: '24px',
-                backgroundColor: 'var(--uedp-indigo-600)',
+                backgroundColor: '#FB923C',
                 borderRadius: '4px',
                 width: `var(--uedp-${s.name})`,
                 minWidth: '4px',
