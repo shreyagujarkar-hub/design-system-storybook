@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.css';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
+export type ButtonVariant = 'primary' | 'secondary' | 'hover' | 'outline' | 'ghost' | 'danger' | 'disabled';
 export type ButtonSize = 'tiny' | 'sm' | 'medium' | 'md' | 'large' | 'lg' | 'giant';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -52,11 +52,15 @@ export const Button: React.FC<ButtonProps> = ({
   showInfoIcon,
   leftIcon,
   rightIcon,
-  children = 'more info',
+  children,
   className = '',
   disabled,
   ...props
 }) => {
+  const isPrimary = variant === 'primary';
+  const effectiveChildren = children ?? (isPrimary ? 'more info' : 'latest');
+  const isEffectivelyDisabled = disabled || variant === 'disabled';
+
   const classes = [
     'uedp-button',
     `uedp-button--${variant}`,
@@ -68,7 +72,7 @@ export const Button: React.FC<ButtonProps> = ({
     .filter(Boolean)
     .join(' ');
 
-  const hasInfoIcon = showInfoIcon ?? (variant === 'primary');
+  const hasInfoIcon = showInfoIcon ?? isPrimary;
   const effectiveRightIcon =
     rightIcon !== undefined
       ? rightIcon
@@ -79,7 +83,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={classes}
-      disabled={disabled || isLoading}
+      disabled={isEffectivelyDisabled || isLoading}
       {...props}
     >
       {isLoading && (
@@ -90,7 +94,7 @@ export const Button: React.FC<ButtonProps> = ({
         </span>
       )}
       {!isLoading && leftIcon && <span className="uedp-button__icon">{leftIcon}</span>}
-      <span className="uedp-button__label">{children}</span>
+      <span className="uedp-button__label">{effectiveChildren}</span>
       {!isLoading && effectiveRightIcon && (
         <span className="uedp-button__icon uedp-button__icon--right">
           {effectiveRightIcon}

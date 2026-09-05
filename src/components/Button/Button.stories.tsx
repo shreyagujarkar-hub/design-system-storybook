@@ -132,18 +132,22 @@ export const Secondary: Story = {
   },
 };
 
-export const Outline: Story = {
+export const Hover: Story = {
+  name: 'Hover',
   args: {
-    variant: 'outline',
-    children: 'Outline Button',
+    variant: 'hover',
+    children: 'latest',
+    size: 'md',
     showInfoIcon: false,
   },
 };
 
-export const Ghost: Story = {
+export const Disabled: Story = {
+  name: 'Disabled',
   args: {
-    variant: 'ghost',
-    children: 'Ghost Button',
+    variant: 'disabled',
+    children: 'latest',
+    size: 'md',
     showInfoIcon: false,
   },
 };
@@ -161,15 +165,6 @@ export const Loading: Story = {
     variant: 'primary',
     isLoading: true,
     children: 'Saving...',
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    variant: 'primary',
-    disabled: true,
-    children: 'Disabled',
-    showInfoIcon: true,
   },
 };
 
@@ -194,9 +189,9 @@ export const AllVariants: Story = {
     <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
       <Button variant="primary">more info</Button>
       <Button variant="secondary">latest</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="danger">Danger</Button>
+      <Button variant="hover">latest</Button>
+      <Button variant="disabled">latest</Button>
+      <Button variant="danger">Delete Item</Button>
     </div>
   ),
 };

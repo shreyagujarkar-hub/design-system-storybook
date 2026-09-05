@@ -98,6 +98,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
+.uedp-button--hover,
 .uedp-button--secondary:hover:not(:disabled),
 .uedp-button--secondary.uedp-button--hover-preview {
   background: #A4F4F9;
@@ -107,6 +108,7 @@
   transform: translateY(-1px);
 }
 
+.uedp-button--press,
 .uedp-button--secondary:active:not(:disabled),
 .uedp-button--secondary.uedp-button--pressed-preview {
   background: #00A2C7;
@@ -116,6 +118,8 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
+.uedp-button--disabled,
+.uedp-button--ghost,
 .uedp-button--secondary:disabled,
 .uedp-button--secondary.uedp-button--disabled-preview {
   background: #92979E;
