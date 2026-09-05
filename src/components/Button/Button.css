@@ -1,6 +1,6 @@
 /* =================================================================
    Button — UEDP Design System
-   Uses: indigo, slate, red, white | border-radius | padding | gap | opacity
+   Matches Figma Component 5: Pill buttons with sizes (Tiny, Medium, Large, Giant)
    ================================================================= */
 
 .uedp-button {
@@ -10,13 +10,16 @@
   gap: var(--uedp-gap-2);
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
+  border-radius: var(--uedp-rounded-full);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
   user-select: none;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 .uedp-button:disabled {
@@ -26,47 +29,64 @@
 
 /* ── Sizes ───────────────────────────────── */
 
+.uedp-button--tiny,
 .uedp-button--sm {
-  padding: var(--uedp-p-1) var(--uedp-p-3);
+  padding: 6px 14px;
   font-size: 0.8125rem;
-  border-radius: var(--uedp-rounded-md);
   line-height: 1.25rem;
+  gap: 6px;
+  border-radius: var(--uedp-rounded-full);
 }
 
+.uedp-button--medium,
 .uedp-button--md {
-  padding: var(--uedp-p-2) var(--uedp-p-4);
-  font-size: 0.875rem;
-  border-radius: var(--uedp-rounded-lg);
-  line-height: 1.25rem;
+  padding: 8px 20px;
+  font-size: 0.9375rem;
+  line-height: 1.35rem;
+  gap: 8px;
+  border-radius: var(--uedp-rounded-full);
 }
 
+.uedp-button--large,
 .uedp-button--lg {
-  padding: var(--uedp-p-3) var(--uedp-p-6);
-  font-size: 1rem;
-  border-radius: var(--uedp-rounded-lg);
+  padding: 12px 28px;
+  font-size: 1.125rem;
   line-height: 1.5rem;
+  gap: 10px;
+  border-radius: var(--uedp-rounded-full);
+}
+
+.uedp-button--giant {
+  padding: 16px 36px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  gap: 14px;
+  border-radius: var(--uedp-rounded-full);
 }
 
 /* ── Variants ────────────────────────────── */
 
+/* Primary: Default White Pill Button matching Figma Component 5 */
 .uedp-button--primary {
-  background: var(--uedp-indigo-600);
-  color: var(--uedp-base-white);
-  border-color: var(--uedp-indigo-600);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  background: var(--uedp-base-white, #FFFFFF);
+  color: #2D2319;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .uedp-button--primary:hover:not(:disabled) {
-  background: var(--uedp-indigo-700);
-  border-color: var(--uedp-indigo-700);
-  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.25);
+  background: var(--uedp-slate-50, #F8FAFC);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
   transform: translateY(-1px);
 }
 
 .uedp-button--primary:active:not(:disabled) {
-  background: var(--uedp-indigo-800);
+  background: var(--uedp-slate-100, #F1F5F9);
+  border-color: rgba(0, 0, 0, 0.14);
   transform: translateY(0);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 .uedp-button--secondary {
@@ -88,18 +108,18 @@
 
 .uedp-button--outline {
   background: transparent;
-  color: var(--uedp-indigo-600);
-  border-color: var(--uedp-indigo-300);
+  color: #2D2319;
+  border-color: var(--uedp-slate-300);
 }
 
 .uedp-button--outline:hover:not(:disabled) {
-  background: var(--uedp-indigo-50);
-  border-color: var(--uedp-indigo-400);
+  background: var(--uedp-slate-50);
+  border-color: var(--uedp-slate-400);
   transform: translateY(-1px);
 }
 
 .uedp-button--outline:active:not(:disabled) {
-  background: var(--uedp-indigo-100);
+  background: var(--uedp-slate-100);
   transform: translateY(0);
 }
 
@@ -170,7 +190,36 @@
 .uedp-button__icon {
   display: inline-flex;
   align-items: center;
-  font-size: 1.125em;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.uedp-button__icon svg {
+  display: block;
+}
+
+.uedp-button--tiny .uedp-button__icon svg,
+.uedp-button--sm .uedp-button__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.uedp-button--medium .uedp-button__icon svg,
+.uedp-button--md .uedp-button__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.uedp-button--large .uedp-button__icon svg,
+.uedp-button--lg .uedp-button__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.uedp-button--giant .uedp-button__icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 /* ── Ripple effect ───────────────────────── */
@@ -179,7 +228,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.08) 10%, transparent 10%);
   transform: scale(10);
   opacity: 0;
   transition: transform 0.5s, opacity 0.3s;
@@ -190,3 +239,4 @@
   opacity: 1;
   transition: 0s;
 }
+
