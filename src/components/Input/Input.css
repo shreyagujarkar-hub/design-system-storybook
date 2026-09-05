@@ -1,57 +1,73 @@
 /* =================================================================
    Input — UEDP Design System
-   Uses: slate, indigo, red | rounded-lg | padding | gap
+   Matches Figma Login Reference: Pill Inputs with Mail and Lock Icons
    ================================================================= */
 
 .uedp-input-group {
   display: flex;
   flex-direction: column;
-  gap: var(--uedp-gap-1);
-  font-family: 'Inter', sans-serif;
+  gap: var(--uedp-gap-1, 4px);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   width: 100%;
-  max-width: var(--uedp-max-w-sm);
+  max-width: var(--uedp-max-w-sm, 384px);
 }
 
 .uedp-input__label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--uedp-slate-700);
+  color: var(--uedp-slate-700, #334155);
 }
 
 .uedp-input__wrapper {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .uedp-input {
   width: 100%;
-  padding: var(--uedp-p-2-5) var(--uedp-p-3-5);
-  font-size: 0.875rem;
+  box-sizing: border-box;
+  padding: var(--uedp-p-2-5, 10px) var(--uedp-p-3-5, 14px);
+  font-size: 0.9375rem;
   font-family: inherit;
-  color: var(--uedp-slate-900);
-  background-color: var(--uedp-base-white);
-  border: 1px solid var(--uedp-slate-300);
-  border-radius: var(--uedp-rounded-lg);
+  color: #334155;
+  background-color: var(--uedp-base-white, #FFFFFF);
+  border: 1px solid var(--uedp-slate-300, #CBD5E1);
+  border-radius: var(--uedp-rounded-lg, 8px);
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .uedp-input::placeholder {
-  color: var(--uedp-slate-400);
+  color: #B5BDC7;
 }
 
 .uedp-input:focus {
-  border-color: var(--uedp-indigo-500);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  border-color: #F97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* ── Pill Shape (Figma Login reference) ──── */
+.uedp-input--pill {
+  border-radius: var(--uedp-rounded-full, 9999px);
+  padding: 13px 24px;
+  font-size: 1rem;
+  background-color: #FFFFFF;
+  border: 1.5px solid transparent;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.uedp-input--pill.uedp-input--has-left-icon {
+  padding-left: 50px;
 }
 
 .uedp-input--has-left-icon {
-  padding-left: var(--uedp-p-10);
+  padding-left: var(--uedp-p-10, 40px);
 }
 
 .uedp-input--has-right-icon {
-  padding-right: var(--uedp-p-10);
+  padding-right: var(--uedp-p-10, 40px);
 }
 
 .uedp-input__icon {
@@ -59,21 +75,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--uedp-slate-400);
+  color: #CBD5E1;
   pointer-events: none;
+  z-index: 1;
 }
 
 .uedp-input__icon--left {
-  left: var(--uedp-p-3);
+  left: 18px;
 }
 
 .uedp-input__icon--right {
-  right: var(--uedp-p-3);
+  right: 18px;
 }
 
-/* Error state */
+/* ── Error state ─────────────────────────── */
 .uedp-input-group--error .uedp-input {
-  border-color: var(--uedp-red-500);
+  border-color: var(--uedp-red-500, #EF4444);
 }
 
 .uedp-input-group--error .uedp-input:focus {
@@ -82,16 +99,17 @@
 
 .uedp-input__helper {
   font-size: 0.75rem;
-  color: var(--uedp-slate-500);
+  color: var(--uedp-slate-500, #64748B);
 }
 
 .uedp-input__helper--error {
-  color: var(--uedp-red-600);
+  color: var(--uedp-red-600, #DC2626);
+  font-weight: 600;
 }
 
-/* Disabled state */
+/* ── Disabled state ──────────────────────── */
 .uedp-input-group--disabled .uedp-input {
-  background-color: var(--uedp-slate-100);
-  color: var(--uedp-slate-500);
+  background-color: var(--uedp-slate-100, #F1F5F9);
+  color: var(--uedp-slate-500, #64748B);
   cursor: not-allowed;
 }
