@@ -88,18 +88,6 @@ export const Default: Story = {
         fontFamily: "'Inter', sans-serif",
       }}
     >
-      <div
-        style={{
-          fontSize: '14px',
-          fontWeight: 500,
-          color: '#64748B',
-          marginBottom: '16px',
-          alignSelf: 'flex-start',
-        }}
-      >
-        Frame 2043683901
-      </div>
-
       <Card {...args} variant="default" />
 
       <div
@@ -138,34 +126,7 @@ export const Pressed: Story = {
         fontFamily: "'Inter', sans-serif",
       }}
     >
-      <div
-        style={{
-          border: '2px dashed #7C3AED',
-          borderRadius: '16px',
-          padding: '24px 20px',
-          position: 'relative',
-        }}
-      >
-        <div
-          style={{
-            position: 'absolute',
-            top: '-12px',
-            left: '16px',
-            background: '#CAD5DF',
-            padding: '0 8px',
-            fontSize: '12px',
-            fontWeight: 600,
-            color: '#7C3AED',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-          }}
-        >
-          ❖ Group 39414
-        </div>
-
-        <Card {...args} variant="pressed" />
-      </div>
+      <Card {...args} variant="pressed" />
 
       <div
         style={{
