@@ -1,28 +1,43 @@
 import React from 'react';
 import './Badge.css';
 
-export type BadgeVariant = 'indigo' | 'emerald' | 'amber' | 'rose' | 'slate' | 'sky';
+export type BadgeVariant =
+  | 'neutral'
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'success'
+  | 'indigo'
+  | 'emerald'
+  | 'amber'
+  | 'rose'
+  | 'slate'
+  | 'sky';
 export type BadgeSize = 'sm' | 'md' | 'lg';
+export type BadgeShape = 'pill' | 'rounded';
 
 export interface BadgeProps {
   variant?: BadgeVariant;
   size?: BadgeSize;
+  shape?: BadgeShape;
   dot?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 
 export const Badge: React.FC<BadgeProps> = ({
-  variant = 'indigo',
+  variant = 'neutral',
   size = 'md',
+  shape = 'rounded',
   dot = false,
-  children,
+  children = 'Base Palette',
   className = '',
 }) => {
   const classes = [
     'uedp-badge',
     `uedp-badge--${variant}`,
     `uedp-badge--${size}`,
+    `uedp-badge--${shape}`,
     className,
   ].filter(Boolean).join(' ');
 
