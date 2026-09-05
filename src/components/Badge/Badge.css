@@ -1,6 +1,7 @@
 /* =================================================================
    Badge — UEDP Design System
    Matches Figma reference: Pill badge with "more info" label & orange info icon
+   States: Default, Hover, Press, Disabled
    ================================================================= */
 
 .uedp-badge {
@@ -46,7 +47,9 @@
   font-size: 0.875rem;
 }
 
-/* ── Default / Primary "more info" Pill Style (Matching Figma Reference) ── */
+/* ── Figma Reference "more info" States ── */
+
+/* 1. Default */
 .uedp-badge--default,
 .uedp-badge--primary {
   background: var(--uedp-base-white, #FFFFFF);
@@ -55,7 +58,37 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
+/* 2. Hover */
+.uedp-badge--hover {
+  background: #FED7AA;
+  color: #2D1E12;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.15);
+}
+
+/* 3. Press */
+.uedp-badge--press {
+  background: #F97316;
+  color: #2D1E12;
+  border: 2px solid transparent;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Disabled */
+.uedp-badge--disabled {
+  background: var(--uedp-base-white, #FFFFFF);
+  color: #596373;
+  border: 2px solid #E2E8F0;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.95;
+}
+
+/* Responsive Sizing for "more info" pill variants */
 .uedp-badge--default.uedp-badge--sm,
+.uedp-badge--hover.uedp-badge--sm,
+.uedp-badge--press.uedp-badge--sm,
+.uedp-badge--disabled.uedp-badge--sm,
 .uedp-badge--primary.uedp-badge--sm {
   padding: 4px 8px 4px 14px;
   font-size: 0.8125rem;
@@ -64,26 +97,38 @@
 }
 
 .uedp-badge--default.uedp-badge--sm .uedp-badge__info-icon,
+.uedp-badge--hover.uedp-badge--sm .uedp-badge__info-icon,
+.uedp-badge--press.uedp-badge--sm .uedp-badge__info-icon,
+.uedp-badge--disabled.uedp-badge--sm .uedp-badge__info-icon,
 .uedp-badge--primary.uedp-badge--sm .uedp-badge__info-icon {
   width: 16px;
   height: 16px;
 }
 
 .uedp-badge--default.uedp-badge--md,
+.uedp-badge--hover.uedp-badge--md,
+.uedp-badge--press.uedp-badge--md,
+.uedp-badge--disabled.uedp-badge--md,
 .uedp-badge--primary.uedp-badge--md {
-  padding: 8px 12px 8px 20px;
+  padding: 8px 12px 8px 22px;
   font-size: 1.0625rem;
   line-height: 1.35rem;
   gap: 12px;
 }
 
 .uedp-badge--default.uedp-badge--md .uedp-badge__info-icon,
+.uedp-badge--hover.uedp-badge--md .uedp-badge__info-icon,
+.uedp-badge--press.uedp-badge--md .uedp-badge__info-icon,
+.uedp-badge--disabled.uedp-badge--md .uedp-badge__info-icon,
 .uedp-badge--primary.uedp-badge--md .uedp-badge__info-icon {
   width: 22px;
   height: 22px;
 }
 
 .uedp-badge--default.uedp-badge--lg,
+.uedp-badge--hover.uedp-badge--lg,
+.uedp-badge--press.uedp-badge--lg,
+.uedp-badge--disabled.uedp-badge--lg,
 .uedp-badge--primary.uedp-badge--lg {
   padding: 12px 16px 12px 26px;
   font-size: 1.25rem;
@@ -92,6 +137,9 @@
 }
 
 .uedp-badge--default.uedp-badge--lg .uedp-badge__info-icon,
+.uedp-badge--hover.uedp-badge--lg .uedp-badge__info-icon,
+.uedp-badge--press.uedp-badge--lg .uedp-badge__info-icon,
+.uedp-badge--disabled.uedp-badge--lg .uedp-badge__info-icon,
 .uedp-badge--primary.uedp-badge--lg .uedp-badge__info-icon {
   width: 26px;
   height: 26px;

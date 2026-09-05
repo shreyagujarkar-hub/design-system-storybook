@@ -13,16 +13,19 @@ const meta: Meta<typeof Badge> = {
 ## Badge Component — UEDP Design System
 
 Pill badge matching the Figma Design System specification.
-Default state features the rounded pill geometry, "more info" label, and the integrated circular orange info icon.
+Includes the 4 interactive states from the reference:
+- **Default**: White pill with orange info icon
+- **Hover**: Warm peach background with orange info icon
+- **Press**: Vibrant orange background with white circular info icon
+- **Disabled**: White background with muted grey text and grey info icon
 
-### Token Bindings
-| Property | Token Variable | Value |
-|----------|---------------|-------|
-| Background | \`--uedp-base-white\` | \`#FFFFFF\` |
-| Text Color | Charcoal | \`#2D1E12\` |
-| Info Icon Fill | \`--uedp-orange-500\` | \`#F97316\` |
-| Border Radius | \`--uedp-rounded-full\` | \`9999px\` (Pill) |
-| Border Color | \`--uedp-slate-200\` | \`#E2E8F0\` |
+### Token & State Mapping
+| State | Variant | Background | Text Color | Icon Style |
+|-------|---------|------------|------------|------------|
+| Default | \`default\` | \`#FFFFFF\` | \`#2D1E12\` | Orange circle, white glyph |
+| Hover | \`hover\` | \`#FED7AA\` | \`#2D1E12\` | Orange circle, white glyph |
+| Press | \`press\` | \`#F97316\` | \`#2D1E12\` | White circle, orange glyph |
+| Disabled | \`disabled\` | \`#FFFFFF\` | \`#596373\` | Grey circle, white glyph |
         `,
       },
     },
@@ -30,7 +33,7 @@ Default state features the rounded pill geometry, "more info" label, and the int
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'indigo', 'emerald', 'amber', 'rose', 'slate', 'sky'],
+      options: ['default', 'hover', 'press', 'disabled', 'primary', 'indigo', 'emerald', 'amber', 'rose', 'slate', 'sky'],
       description: 'Visual style variant',
       table: { defaultValue: { summary: 'default' } },
     },
@@ -42,7 +45,7 @@ Default state features the rounded pill geometry, "more info" label, and the int
     },
     showInfoIcon: {
       control: 'boolean',
-      description: 'Show circular orange info icon on the right',
+      description: 'Show circular info icon on the right',
       table: { defaultValue: { summary: 'true' } },
     },
     dot: {
@@ -71,19 +74,9 @@ export const Default: Story = {
   },
 };
 
-export const Small: Story = {
+export const Hover: Story = {
   args: {
-    variant: 'default',
-    size: 'sm',
-    showInfoIcon: true,
-    dot: false,
-    children: 'more info',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    variant: 'default',
+    variant: 'hover',
     size: 'md',
     showInfoIcon: true,
     dot: false,
@@ -91,10 +84,20 @@ export const Medium: Story = {
   },
 };
 
-export const Large: Story = {
+export const Press: Story = {
   args: {
-    variant: 'default',
-    size: 'lg',
+    variant: 'press',
+    size: 'md',
+    showInfoIcon: true,
+    dot: false,
+    children: 'more info',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    variant: 'disabled',
+    size: 'md',
     showInfoIcon: true,
     dot: false,
     children: 'more info',
@@ -102,15 +105,47 @@ export const Large: Story = {
 };
 
 export const AllVariants: Story = {
+  name: 'All Variants',
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
-      <Badge variant="default" size="md">more info</Badge>
-      <Badge variant="indigo" dot>Indigo</Badge>
-      <Badge variant="emerald" dot>Success</Badge>
-      <Badge variant="amber" dot>Warning</Badge>
-      <Badge variant="rose" dot>Critical</Badge>
-      <Badge variant="sky" dot>Info</Badge>
-      <Badge variant="slate" dot>Neutral</Badge>
+    <div
+      style={{
+        background: '#94A4B4',
+        padding: '40px 32px',
+        borderRadius: '16px',
+        fontFamily: "'Inter', sans-serif",
+        display: 'inline-flex',
+        flexDirection: 'column',
+        gap: '24px',
+        minWidth: '260px',
+      }}
+    >
+      {/* 1. Default State */}
+      <div style={{ paddingBottom: '20px', borderBottom: '2px dashed #7C3AED', display: 'flex', justifyContent: 'center' }}>
+        <Badge variant="default" size="md">
+          more info
+        </Badge>
+      </div>
+
+      {/* 2. Hover State */}
+      <div style={{ paddingBottom: '20px', borderBottom: '2px dashed #7C3AED', display: 'flex', justifyContent: 'center' }}>
+        <Badge variant="hover" size="md">
+          more info
+        </Badge>
+      </div>
+
+      {/* 3. Press State */}
+      <div style={{ paddingBottom: '20px', borderBottom: '2px dashed #7C3AED', display: 'flex', justifyContent: 'center' }}>
+        <Badge variant="press" size="md">
+          more info
+        </Badge>
+      </div>
+
+      {/* 4. Disabled State */}
+      <div style={{ paddingBottom: '8px', display: 'flex', justifyContent: 'center' }}>
+        <Badge variant="disabled" size="md">
+          more info
+        </Badge>
+      </div>
     </div>
   ),
 };
