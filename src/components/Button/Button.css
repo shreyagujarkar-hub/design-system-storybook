@@ -8,9 +8,10 @@
   align-items: center;
   justify-content: center;
   gap: var(--uedp-gap-2);
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  border: 1px solid transparent;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border: 2px solid transparent;
   border-radius: var(--uedp-rounded-full);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -31,37 +32,37 @@
 
 .uedp-button--tiny,
 .uedp-button--sm {
-  padding: 6px 14px;
+  padding: 6px 10px 6px 16px;
   font-size: 0.8125rem;
   line-height: 1.25rem;
-  gap: 6px;
+  gap: 8px;
   border-radius: var(--uedp-rounded-full);
 }
 
 .uedp-button--medium,
 .uedp-button--md {
-  padding: 8px 20px;
-  font-size: 0.9375rem;
+  padding: 10px 14px 10px 24px;
+  font-size: 1.0625rem;
   line-height: 1.35rem;
-  gap: 8px;
+  gap: 12px;
   border-radius: var(--uedp-rounded-full);
 }
 
 .uedp-button--large,
 .uedp-button--lg {
-  padding: 12px 28px;
-  font-size: 1.125rem;
+  padding: 14px 18px 14px 30px;
+  font-size: 1.25rem;
   line-height: 1.5rem;
-  gap: 10px;
+  gap: 16px;
   border-radius: var(--uedp-rounded-full);
 }
 
 .uedp-button--giant {
-  padding: 16px 36px;
+  padding: 18px 24px 18px 36px;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
-  gap: 14px;
+  gap: 20px;
   border-radius: var(--uedp-rounded-full);
 }
 
@@ -70,21 +71,21 @@
 /* Primary: Default White Pill Button matching Figma Component 5 */
 .uedp-button--primary {
   background: var(--uedp-base-white, #FFFFFF);
-  color: #2D2319;
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  color: #2D1E12;
+  border-color: #E2E8F0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .uedp-button--primary:hover:not(:disabled) {
   background: var(--uedp-slate-50, #F8FAFC);
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 8px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
   transform: translateY(-1px);
 }
 
 .uedp-button--primary:active:not(:disabled) {
   background: var(--uedp-slate-100, #F1F5F9);
-  border-color: rgba(0, 0, 0, 0.14);
+  border-color: #94A3B8;
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
@@ -201,25 +202,25 @@
 
 .uedp-button--tiny .uedp-button__icon svg,
 .uedp-button--sm .uedp-button__icon svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 .uedp-button--medium .uedp-button__icon svg,
 .uedp-button--md .uedp-button__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
 }
 
 .uedp-button--large .uedp-button__icon svg,
 .uedp-button--lg .uedp-button__icon svg {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
 .uedp-button--giant .uedp-button__icon svg {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
 }
 
 /* ── Ripple effect ───────────────────────── */

@@ -31,16 +31,16 @@ export const InfoIcon: React.FC<{ className?: string; style?: React.CSSPropertie
   style,
 }) => (
   <svg
-    viewBox="0 0 20 20"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
     style={style}
     aria-hidden="true"
   >
-    <circle cx="10" cy="10" r="10" fill="var(--uedp-orange-500, #F97316)" />
-    <circle cx="10" cy="5.75" r="1.25" fill="#FFFFFF" />
-    <rect x="8.75" y="8.5" width="2.5" height="6.25" rx="1.25" fill="#FFFFFF" />
+    <circle cx="12" cy="12" r="12" fill="var(--uedp-orange-500, #F97316)" />
+    <circle cx="12" cy="6.75" r="1.5" fill="#FFFFFF" />
+    <rect x="10.5" y="10" width="3" height="7.5" rx="1.5" fill="#FFFFFF" />
   </svg>
 );
 
