@@ -36,53 +36,7 @@
   font-size: 0.875rem;
 }
 
-/* ── Shapes ──────────────────────────────── */
-.uedp-badge--pill {
-  border-radius: var(--uedp-rounded-full, 9999px);
-}
-
-.uedp-badge--rounded {
-  border-radius: 8px;
-}
-
 /* ── Variants ────────────────────────────── */
-
-/* Neutral / Default: Pure white card tag with dark text matching Figma reference */
-.uedp-badge--neutral {
-  background-color: #FFFFFF;
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  font-weight: 700;
-}
-
-/* Primary: Cyan / Teal matching Figma Frame 5 */
-.uedp-badge--primary {
-  background-color: var(--uedp-cyan-100, #CFFAFE);
-  color: #008CA3;
-  border: 1px solid var(--uedp-cyan-300, #67E8F9);
-}
-
-/* Secondary: Warm Amber / Orange matching Figma Frame 6 */
-.uedp-badge--secondary {
-  background-color: var(--uedp-orange-100, #FFEDD5);
-  color: #C2410C;
-  border: 1px solid var(--uedp-orange-300, #FED7AA);
-}
-
-/* Error: Red matching Figma Frame 1 Error */
-.uedp-badge--error {
-  background-color: #FEF2F2;
-  color: #DC2626;
-  border: 1px solid #FECACA;
-}
-
-/* Success: Green matching Figma Frame 1 Sucess */
-.uedp-badge--success {
-  background-color: #F0FDF4;
-  color: #16A34A;
-  border: 1px solid #BBF7D0;
-}
 .uedp-badge--indigo {
   background-color: var(--uedp-indigo-50);
   color: var(--uedp-indigo-700);
